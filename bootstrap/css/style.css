@@ -1,0 +1,6 @@
+#pagina {
+	margin: 36px auto;   /*el primer elemento es arriba y abajo, el segundo es de los lados, auto es centrado*/
+	overflow: hidden;
+	width: 90%;
+    text-align:center;
+}

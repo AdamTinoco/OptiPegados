@@ -1,0 +1,84 @@
+<!DOCTYPE HTML	>
+ 
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Optimización Entera y Dinámica</title>
+  <link rel="shortcut icon" href="img/favicon.ico">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Optimización entera y dinámica">
+	<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+	  <script type="text/javascript" src="script/dijkstra.js"></script>
+	<link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link href="bootstrap/css/style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="jquery/jquery-ui.css" />  
+  <script src="jquery/jquery-1.9.1.js"></script>
+  <script src="jquery/jquery-ui.js"></script>
+  <script>
+function goBack()
+  {
+  window.history.back()
+  }
+</script>
+  <style>  
+	div.upload {
+    width: 116px;
+    height: 48px;
+    background: url(img/cargar.jpg);
+    overflow: hidden;
+}
+
+div.upload input {
+    display: block !important;
+    width: 157px !important;
+    height: 57px !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
+}
+      
+      #input
+      {
+        float:left;
+      }
+      
+      #output
+      {
+        clear:left;
+      }
+      
+      #apartado
+      {
+          padding:50px;
+          align-content:center;
+          text-align:center;
+          margin:0 auto;
+      }
+  </style>
+    
+</head>
+
+<body>
+    <div class="alert alert-success">
+        <div class="jumbotron">
+            <div class="container" align="center">
+                <h1>La ruta Más Corta</h1>
+                <h5>Dijkstra</h5>
+            </div>
+        </div>
+    </div>
+    <div align="center">
+        <textarea id="entrada"placeholder="introduzca su matriz..."></textarea>
+        <input id="origen" type="number">
+        Resultado
+        <textarea id="salida">resultados </textarea>
+        <br>
+        <a href="#" class="btn btn-success" onclick="dijkstra()"><i class="icon-white icon-play"></i> Comenzar</a>
+        </div>
+        <hr />
+        <br />
+         <div align="center">
+    	<a href="#" class="btn btn-danger btn-large" onclick="goBack()"><i class="icon-white icon-warning-sign"></i> Regresar</a>
+    </div>
+    </body>
+</html>

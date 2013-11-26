@@ -1,0 +1,148 @@
+<!DOCTYPE HTML	>
+ 
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Optimización Entera y Dinámica</title>
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <script type="text/javascript" src="script/main.js"></script>
+   <script type="text/javascript" src="script/hungarian.js"></script>
+   <script type="text/javascript" src="script/library.js"></script>
+    <script type="text/javascript" src="script/matriz.js"></script>
+    <script type="text/javascript" src="script/noreste.js"></script>
+    <script type="text/javascript" src="script/costoMinimo.js"></script>
+    <script type="text/javascript" src="script/voguel.js"></script>
+    <script type="text/javascript" src="script/unionBuscar.js"></script>
+    
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Optimización entera y dinámica">
+	<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link href="bootstrap/css/style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="jquery/jquery-ui.css" />  
+  <script src="jquery/jquery-1.9.1.js"></script>
+  <script src="jquery/jquery-ui.js"></script>
+
+    <script>
+
+   $(function() {
+    $( "#accordion" ).accordion({
+      collapsible: true
+    });
+  });
+ 
+  </script>
+  <script>
+function goBack()
+  {
+  window.history.back()
+  }
+</script>
+  <style>  
+	div.upload {
+    width: 116px;
+    height: 48px;
+    background: url(img/cargar.jpg);
+    overflow: hidden;
+}
+
+div.upload input {
+    display: block !important;
+    width: 157px !important;
+    height: 57px !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
+}
+      
+      #input
+      {
+        float:left;
+      }
+      
+      #output
+      {
+        clear:left;
+      }
+      
+      #apartado
+      {
+          padding:50px;
+          align-content:center;
+          text-align:center;
+          margin:0 auto;
+      }
+  </style>
+    
+</head>
+
+<body>
+    <div class="alert alert-success">
+        <div class="jumbotron">
+            <div class="container" align="center">
+                <h1>Modelos de Transporte y Asignación</h1>
+            </div>
+        </div>
+    </div>
+    <div id="pagina">
+        <div id="accordion">
+            
+          
+            
+            <h3>Problema de Transporte</h3>
+            <div id="apartado">
+                <div align="center">
+                    <div id="input">
+                        <div class="upload">
+                            <input type="file" name="upload"/>
+                        </div>
+                        <br>
+                        <div align="center">
+                            <textarea id="entrada" name="entrada"  rows="15" cols="20" placeholder="introduzca su matriz..."></textarea>
+                        </div>
+                        <br>
+                        <div class="btn-group-vertical">
+                            <a href="#" class="btn btn-success" onclick="noreste()"><i class="icon-white icon-play"></i> Esquina Noroeste</a>
+                            <a href="#" class="btn btn-success" onclick="costo()"><i class="icon-white icon-play"></i> Costos Mínimos</a>
+                            <a href="#" class="btn btn-success" onclick="voguel()"><i class="icon-white icon-play"></i> Voguel</a>
+                            
+                        </div>
+                    </div>
+                    <div align="right">
+                        <h3>Output</h3>
+                        <textarea id="vaciado_t1" name="vaciado_t1" rows="15" cols="20"></textarea>
+                    </div>
+                </div>
+            </div>
+            <h3>Problema de Asignación</h3>
+            <div id="apartado">
+                <div id="input" align="center">
+                    <div class="upload">
+                        <input type="file" name="upload"/>
+                    </div>
+                    <br>
+                    <textarea id="asignacion" name="asignacion"  rows="15" cols="20" placeholder="introduzca su matriz..."></textarea>
+                    <div>
+                        <form name= "radios">
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-primary">
+                                    <input type="radio"  name="tipo" value="1" checked>Minimizar<br>
+                                </label>
+                                <label class="btn btn-primary">
+                                    <input type="radio"  name="tipo" value="-1" > Maximizar<br>
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                    <a href="#" class="btn btn-success" onclick="hungaro()"><i class="icon-white icon-play"></i> Método Húngaro</a>
+                </div>
+                <div>
+                    <h3>Output</h3>
+                    <textarea id="vaciado_h1" name="vaciado_h1" rows="15" cols="20" ></textarea>
+                </div>
+            </div>
+        </div>        
+    </div>
+    <div align="center">
+    	<a href="#" class="btn btn-danger btn-large" onclick="goBack()"><i class="icon-white icon-warning-sign"></i> Regresar</a>
+    </div>
+</body>
